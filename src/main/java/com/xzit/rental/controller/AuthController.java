@@ -75,7 +75,7 @@ public class AuthController {
         return Result.success(tokenVo).setMessage("刷新token成功");
     }
 
-    @GetMapping("/info")
+    @GetMapping("/getInfo")
     public Result getUserInfo(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication==null){
@@ -88,6 +88,7 @@ public class AuthController {
                 .map(Permission::getPermissionCode).toArray();*/
         UserInfoVo userInfoVo = new UserInfoVo(user.getId(),user.getUsername(),
                 user.getAvatar(),user.getNickname(),array);
+        System.out.println(userInfoVo);
         return Result.success(userInfoVo).setMessage("获取用户信息成功");
     }
     @GetMapping("/menuList")

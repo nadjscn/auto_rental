@@ -9,7 +9,7 @@ public class Result<T> {
     private Integer code;
     private String message;
     private Boolean success;
-    private T date;
+    private T data;
 
     private Result(){
     }
@@ -20,11 +20,11 @@ public class Result<T> {
         return new Result<T>().setSuccess(true)
                 .setCode(ResultCode.SUCCESS).setMessage("操作成功");
     }
-    public static <T> Result<T> success(T date){
+    public static <T> Result<T> success(T data){
         return new Result<T>().setSuccess(true)
                 .setCode(ResultCode.SUCCESS)
                 .setMessage("操作成功")
-                .setDate(date);
+                .setData(data);
     }
     /*
      * 增加、删除、修改操作失败
