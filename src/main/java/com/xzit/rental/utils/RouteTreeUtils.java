@@ -34,7 +34,7 @@ Optional.ofNullable(permissionList).orElse(new ArrayList<>())
                 routeVo.setAlwaysShow(false);
             }
             // 设置路由元数据
-            routeVo.setMete(routeVo.new Mete(permission.getPermissionLable(),
+            routeVo.setMeta(routeVo.new Meta(permission.getPermissionLable(),
                     permission.getIcon(),
                     permission.getPermissionCode().split(",")));
             // 递归构建子路由
